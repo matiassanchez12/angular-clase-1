@@ -1,0 +1,30 @@
+<app-bienvenido></app-bienvenido>
+<app-error></app-error>
+<app-login></app-login>
+
+<div class="container">
+  <div style="margin: 2rem; display: flex; gap: 0.5rem">
+    <label for="">Edad uno :</label>
+    <input [(ngModel)]="edadUno" />
+    <br />
+    <label for="">Edad dos :</label>
+    <input [(ngModel)]="edadDos" />
+  </div>
+
+  <br />
+
+  <div style="margin-left: 2rem">
+    <button (click)="calcularSuma()">Calcular Suma</button>
+    <button (click)="calcularPromedio()">Calcular Promedio</button>
+    <button (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <br />
+
+  <div style="margin-left: 2rem">
+    <p>Resultado Suma: {{ suma }}</p>
+    <p>Resultado Promedio: {{ promedio }}</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
