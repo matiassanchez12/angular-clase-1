@@ -1,0 +1,52 @@
+<section class="pt-8 px-6 space-y-12">
+  <div class="flex_center flex-col gap-8">
+    <div class="flex gap-6">
+      <div class="flex gap-2">
+        <label class="text-blue-50 text-lg" for="ageone"
+          >Ingresar edad uno :</label
+        >
+        <input
+          id="ageone"
+          [(ngModel)]="edadUno"
+          class="rounded-md bg-blue-300"
+        />
+      </div>
+
+      <div class="flex gap-2">
+        <label class="text-blue-50 text-lg">Ingresar edad dos :</label>
+        <input
+          id="agetwo"
+          [(ngModel)]="edadDos"
+          class="rounded-md bg-blue-300"
+        />
+      </div>
+    </div>
+
+    <div class="flex gap-6" style="margin-left: 2rem">
+      <button
+        class="bg-blue-600 text-white p-2 rounded-md"
+        (click)="calcularSuma()"
+      >
+        Calcular Suma
+      </button>
+      <button class="bg-blue-600 text-white p-2 rounded-md" (click)="limpiar()">
+        Limpiar
+      </button>
+      <button
+        class="bg-blue-600 text-white p-2 rounded-md"
+        (click)="calcularPromedio()"
+      >
+        Calcular Promedio
+      </button>
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="flex_center gap-8 w-[400px] p-6 text-blue-50">
+      <p class="m-0 bg-blue-500 p-2 rounded-sm">Resultado Suma: {{ suma }}</p>
+      <p class="m-0 bg-blue-500 p-2 rounded-sm">
+        Resultado Promedio: {{ promedio }}
+      </p>
+    </div>
+  </div>
+</section>

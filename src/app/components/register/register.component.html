@@ -7,6 +7,10 @@
         <form class="login">
           <div class="login__field">
             <i class="login__icon fas fa-user"></i>
+            <input type="text" class="login__input" placeholder="User name" />
+          </div>
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
             <input type="text" class="login__input" placeholder="Email" />
           </div>
           <div class="login__field">
@@ -18,14 +22,14 @@
             />
           </div>
           <button class="button login__submit">
-            <span class="button__text">Log In Now</span>
+            <span class="button__text">Create Account</span>
             <i class="button__icon fas fa-chevron-right"></i>
           </button>
         </form>
         <div class="social-login">
-          <span>New on this page?</span>
-          <a routerLink="/register" style="cursor: pointer; text-align: center">
-            Sign up
+          <span>Already have account?</span>
+          <a routerLink="/login" style="cursor: pointer; text-align: center">
+            Sign in
           </a>
         </div>
       </div>

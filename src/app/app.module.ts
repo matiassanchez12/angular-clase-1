@@ -8,7 +8,9 @@ import { BienvenidoComponent } from './components/bienvenido/bienvenido.componen
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
+import { RegisterComponent } from './components/register/register.component';
+import { ExercisesComponent } from './components/exercises/exercises.component';
+import { EjerciciounoComponent } from './components/ejerciciouno/ejerciciouno.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { MaterialModule } from './material.module';
     BienvenidoComponent,
     ErrorComponent,
     LoginComponent,
+    RegisterComponent,
+    ExercisesComponent,
+    EjerciciounoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

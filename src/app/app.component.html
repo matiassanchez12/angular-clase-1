@@ -1,30 +1,47 @@
-<app-bienvenido></app-bienvenido>
-<app-error></app-error>
-<app-login></app-login>
+<main class="bg-slate-600 min-h-full">
+  <nav
+    *ngIf="!showNavbar"
+    class="flex justify-between items-center px-6 h-[80px] max-w-[2500px] shadow-md"
+  >
+    <div
+      class="text-violet-200 text-xl font-semibold"
+      style="letter-spacing: 0.1rem"
+    >
+      Logo
+    </div>
 
-<div class="container">
-  <div style="margin: 2rem; display: flex; gap: 0.5rem">
-    <label for="">Edad uno :</label>
-    <input [(ngModel)]="edadUno" />
-    <br />
-    <label for="">Edad dos :</label>
-    <input [(ngModel)]="edadDos" />
-  </div>
+    <ul class="flex gap-8">
+      <li>
+        <a routerLink="" class="rounded-sm text-violet-200 text-lg">Home</a>
+      </li>
 
-  <br />
+      <li>
+        <a routerLink="error" class="rounded-sm text-violet-200 text-lg">
+          Error page
+        </a>
+      </li>
 
-  <div style="margin-left: 2rem">
-    <button (click)="calcularSuma()">Calcular Suma</button>
-    <button (click)="calcularPromedio()">Calcular Promedio</button>
-    <button (click)="limpiar()">Limpiar</button>
-  </div>
+      <li>
+        <a routerLink="excercises" class="rounded-sm text-violet-200 text-lg">
+          Excercises
+        </a>
+      </li>
+      <div class="w-[1px] h-6 my-auto bg-white mx-4"></div>
+      <li>
+        <a routerLink="login" class="rounded-sm text-violet-200 text-lg">
+          Sign in
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="register"
+          class="rounded-sm bg-violet-900 p-2 text-white text-lg"
+        >
+          Sign up
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  <br />
-
-  <div style="margin-left: 2rem">
-    <p>Resultado Suma: {{ suma }}</p>
-    <p>Resultado Promedio: {{ promedio }}</p>
-  </div>
-</div>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</main>

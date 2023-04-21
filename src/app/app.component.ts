@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,34 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  edadUno: string = '';
-  edadDos: string = '';
+  showNavbar: boolean = false;
 
-  suma: number = 0;
-  promedio: number = 0;
-
-  calcularSuma() {
-    if (!this.isNumeric(this.edadDos) || !this.isNumeric(this.edadUno)) {
-      return;
-    }
-
-    this.suma = Number(this.edadUno) + Number(this.edadDos);
-  }
-
-  calcularPromedio() {
-    if (!this.isNumeric(this.edadDos) || !this.isNumeric(this.edadUno)) {
-      return;
-    }
-
-    this.promedio = Number(this.edadUno) + Number(this.edadDos) / 2;
-  }
-
-  limpiar() {
-    this.edadDos = '';
-    this.edadUno = '';
-  }
-
-  isNumeric(value: string) {
-    return /^-?\d+$/.test(value);
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.showNavbar =
+          this.router.url === '/login' || this.router.url === '/register';
+      }
+    });
   }
 }
